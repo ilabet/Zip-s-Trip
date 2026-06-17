@@ -24,7 +24,7 @@
             justify-content: space-between;
         }
 
-        /* 2. Cybernetic Background Artwork Placeholder */
+        /* 2. Cybernetic Background Artwork Video Styling */
         .bg-artwork {
             position: absolute;
             top: 0;
@@ -194,8 +194,11 @@
 </head>
 <body>
 
-    <!-- Background Artwork Placement: Replace source with your actual 3D rendering -->
-    <img class="bg-artwork" src="https://unsplash.com" alt="Cybernetic Editorial Background">
+    <!-- Background Video: Replace paths with your video files -->
+    <video class="bg-artwork" autoplay muted loop playsinline poster="fallback-image.jpg">
+        <source src="Screen Recording 2026-06-16 012904.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
     <!-- Top Layout: Branding & Interactive Top Menu Headers -->
     <header>
