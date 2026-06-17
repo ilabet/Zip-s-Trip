@@ -224,18 +224,310 @@
         <a href="#book" class="cta-btn">Book Your Transformation</a>
     </main>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Era - Laboratory of Perfection</title>
+    <style>
+        /* 1. Global Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
 
-       <iframe
-    width="100%"
-    height="166"
-    scrolling="no"
-    frameborder="no"
-    allow="autoplay; encrypted-media"
-    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1829707320&color=%23ff5500&auto_play=true&muted=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-</iframe>
-<div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-    <a href="https://soundcloud.com/user-439903032" title="ShimMinaj" target="_blank" style="color: #cccccc; text-decoration: none;">ShimMinaj</a> ·
-    <a href="https://soundcloud.com/user-439903032/gimme-a-light-nicki-verison" title="Gimme A Light - Nicki verison | BASS BOOST" target="_blank" style="color: #cccccc; text-decoration: none;">Gimme A Light - Nicki verison | BASS BOOST</a>
-</div>
+        body, html {
+            width: 100%;
+            height: 100%;
+            background-color: #0b1517;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* 2. Cybernetic Background Video */
+        .bg-artwork {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            filter: brightness(0.65) contrast(1.1) saturate(0.85);
+        }
+
+        /* 3. Top Navigation Layout */
+        header {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        /* Brutalist Title Styling */
+        .branding-group {
+            color: #ffffff;
+        }
+
+        .main-logo {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 0.85;
+            text-transform: lowercase;
+            font-family: Arial, sans-serif;
+        }
+
+        .sub-logo {
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            margin-top: 10px;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        /* Top Menu & Interactive Hover Items */
+        .top-nav {
+            display: flex;
+            gap: 40px;
+            padding-top: 20px;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            opacity: 0.5;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        /* Interactive Hover Highlight States */
+        .nav-link:hover {
+            opacity: 1;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        /* Decorative animated line below links */
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Secondary Header Right Block (Brutalist Symmetry) */
+        .right-branding {
+            font-size: clamp(3.5rem, 8vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 0.85;
+            color: #ffffff;
+            text-transform: lowercase;
+        }
+
+        /* 4. Bottom Section & Frosted Button Container */
+        main {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 60px;
+        }
+
+        /* Frosted Glass Pill Button */
+        .cta-btn {
+            background: rgba(255, 255, 255, 0.03);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding: 22px 80px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: pointer;
+            text-align: center;
+        }
+
+        /* Frosted Button Hover Animation */
+        .cta-btn:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 12px 40px 0 rgba(255, 255, 255, 0.1), 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: scale(1.02);
+            letter-spacing: 4px;
+        }
+
+        .cta-btn:active {
+            transform: scale(0.99);
+        }
+
+        /* Responsive Layout Optimization */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+            }
+            .top-nav {
+                width: 100%;
+                justify-content: space-between;
+                gap: 10px;
+            }
+            .right-branding {
+                display: none;
+            }
+            .cta-btn {
+                width: 90%;
+                padding: 18px 20px;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* 5. Frosted Glass Overlay */
+        .frosted-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(11, 21, 23, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .overlay-content {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* 6. Hidden SoundCloud Player */
+        #soundcloudPlayer {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video class="bg-artwork" autoplay loop muted playsinline>
+        <source src="videos/background-video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Frosted Glass Overlay -->
+    <div class="frosted-overlay" id="frostedOverlay">
+        <div class="overlay-content" id="overlayText">Click to Enter...</div>
+    </div>
+
+    <!-- Top Navigation -->
+    <header>
+        <div class="branding-group">
+            <div class="main-logo">new era</div>
+            <div class="sub-logo">laboratory of perfection</div>
+        </div>
+        <nav class="top-nav">
+            <a href="#" class="nav-link">HOME</a>
+            <a href="#" class="nav-link">ABOUT</a>
+            <a href="#" class="nav-link">PROJECTS</a>
+            <a href="#" class="nav-link">CONTACT</a>
+        </nav>
+        <div class="right-branding">new era</div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <a href="#" class="cta-btn">EXPLORE</a>
+    </main>
+
+    <!-- Hidden SoundCloud Player -->
+    <div id="soundcloudPlayer">
+        <iframe
+            width="100%"
+            height="166"
+            scrolling="no"
+            frameborder="no"
+            allow="autoplay; encrypted-media"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1829707320&color=%23ff5500&auto_play=true&muted=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+        </iframe>
+        <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
+            <a href="https://soundcloud.com/user-439903032" title="ShimMinaj" target="_blank" style="color: #cccccc; text-decoration: none;">ShimMinaj</a> ·
+            <a href="https://soundcloud.com/user-439903032/gimme-a-light-nicki-verison" title="Gimme A Light - Nicki verison | BASS BOOST" target="_blank" style="color: #cccccc; text-decoration: none;">Gimme A Light - Nicki verison | BASS BOOST</a>
+        </div>
+    </div>
+
+    <!-- JavaScript to handle overlay click and autoplay -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const overlay = document.getElementById("frostedOverlay");
+            const soundcloudPlayer = document.getElementById("soundcloudPlayer");
+            const overlayText = document.getElementById("overlayText");
+
+            // Click event to remove overlay and start music
+            overlay.addEventListener("click", function() {
+                overlay.style.opacity = "0";
+                soundcloudPlayer.style.display = "block";
+
+                // Start the SoundCloud player after a short delay to ensure the overlay is hidden
+                setTimeout(function() {
+                    const iframe = soundcloudPlayer.querySelector("iframe");
+                    iframe.src = iframe.src.replace("muted=true", "muted=false");
+                }, 500);
+            });
+
+            // Optional: Remove overlay if user presses any key
+            document.addEventListener("keydown", function(e) {
+                if (e.key === "Enter" || e.key === " ") {
+                    overlay.style.opacity = "0";
+                    soundcloudPlayer.style.display = "block";
+
+                    setTimeout(function() {
+                        const iframe = soundcloudPlayer.querySelector("iframe");
+                        iframe.src = iframe.src.replace("muted=true", "muted=false");
+                    }, 500);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
